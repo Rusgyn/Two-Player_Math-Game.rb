@@ -10,7 +10,7 @@
 # This class will simply generate and validate questions
 
 
-class Questions
+class Question
   attr_reader :num1, :num2, :answer
 
   def initialize
@@ -20,10 +20,10 @@ class Questions
   end
 
   def create_question
-    "What does #{@num1} plus ##{@num2} equal?"
+    "What does #{@num1} plus #{@num2} equal?"
   end
 
-  def check_answer(input)
-    input == @answer
+  def check_answer(player_answer)
+    player_answer == @answer
   end
 end
