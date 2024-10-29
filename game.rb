@@ -5,9 +5,8 @@
 #   - players - Holding the instance of class Players. It's an array.
 #   - current_player - This tracks who's turn to play
 # Behavior/Method:
-#   - def start - This initialize the game.
+#   - def start_the_game - This initialize the game.
 #   - def switch_turn - Each turn the current_player change
-#   - def display_score - this displays the current score of each players and lives
 #   - def winner - Announces the winner.
 # This class will handle all player's I/O
 # This class is responsible for managing the current_player
@@ -27,24 +26,11 @@ class Game
 
       IOHandler.display_message("#{@current_player.name}: #{question.create_question}")
       player_answer = IOHandler.get_input("#{@current_player.name}'s answer:")
-      puts "PLAYER ANSWER #{player_answer}"
+   
       until question.validate_answer?(player_answer)
         IOHandler.display_message("Invalid input. Please enter a valid number.")
         player_answer = IOHandler.get_input("#{@current_player.name}'s answer:")
       end
-
-      # if question.validate_answer(player_answer)
-      #   if question.check_answer(player_answer)
-      #     IOHandler.display_message("YES! You are correct.")
-      #   else
-      #     IOHandler.display_message("NO! Your answer is incorrect!")
-      #     @current_player.lose_life
-      #   end
-      # else
-        
-      # end
-
-
 
       if question.check_answer(player_answer)
         IOHandler.display_message("YES! You are correct.")

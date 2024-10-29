@@ -1,5 +1,5 @@
 # IO handler
-# Isolate your I/O logic to one or two classes. Don't allow all your classes to interact (gets/puts) with the User
+# Isolate your I/O logic. Don't allow all your classes to interact (gets/puts) with the User
 
 class IOHandler
   #Input
@@ -10,7 +10,7 @@ class IOHandler
   end
 
   def self.display_message(message)
-    puts message
+    puts "#{message}"
   end
 
   #Output

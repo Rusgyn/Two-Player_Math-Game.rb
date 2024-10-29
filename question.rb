@@ -5,6 +5,7 @@
 #   - num1 and num2 - two random numbers between 1 and 20 for the question
 #   - answer - The correct answer to the question
 # Behavior/Method:
+#   - def validate_answer - validates players answer if numeric.
 #   - def create_question - Generates the question with two random numbers
 #   - def check_answer - Compares player's input (answer) to the correct answer and returns if its correct or not.
 # This class will simply generate and validate questions
@@ -28,7 +29,6 @@ class Question
   end
 
   def check_answer(player_answer)
-    puts "THE ANSWER #{@answer}"
     player_answer.to_i == @answer
   end
 
