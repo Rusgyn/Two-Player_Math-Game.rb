@@ -23,7 +23,13 @@ class Question
     "What does #{@num1} plus #{@num2} equal?"
   end
 
-  def check_answer(player_answer)
-    player_answer == @answer
+  def validate_answer?(player_answer) #Boolean
+    player_answer.match?(/^[-]?\d+$/) #True or False
   end
+
+  def check_answer(player_answer)
+    puts "THE ANSWER #{@answer}"
+    player_answer.to_i == @answer
+  end
+
 end
